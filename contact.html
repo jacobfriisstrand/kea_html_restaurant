@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Contact | Restaurant KEA</title>
   </head>
   <body>
@@ -12,25 +13,27 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a class="active-link" href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <section>
-        <p><em>Guldbergsgade 29N 2200 Copenhagen</em></p>
-        <p>
-          <em>Phone no.: <a href="tel:20825370">20 82 53 70</a></em>
-        </p>
-        <p>
-          <em>Email: <a href="mailto:info@restaurantkea.dk">info@restaurantkea.dk</a></em>
-        </p>
+    <main class="contact-main">
+      <section class="contact-section">
+        <div class="contact-section-img-wrapper"><img src="/restaurant_assets/img/map.jpg" alt="Map of KEA" /></div>
+        <div class="contact-info">
+          <p>
+            <em>Guldbergsgade 29N <br />2200 Copenhagen</em>
+          </p>
+          <p>
+            <em>Phone no.: <a href="tel:20825370">20 82 53 70</a></em>
+          </p>
+          <p>
+            <em>Email: <a href="mailto:info@restaurantkea.dk">info@restaurantkea.dk</a></em>
+          </p>
+        </div>
       </section>
       <section>
-        <img src="/restaurant_assets/img/map.jpg" alt="Map of KEA" />
-      </section>
-      <section>
-        <form>
+        <form class="contact-form">
           <fieldset>
             <legend>Contact form</legend>
             <div>
@@ -55,7 +58,6 @@
             </div>
             <div>
               <label for="additional">Further information</label>
-              <br />
               <textarea name="additional"></textarea>
             </div>
             <button>Send</button>

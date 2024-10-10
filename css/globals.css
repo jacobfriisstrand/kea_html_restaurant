@@ -1,0 +1,243 @@
+:root {
+  /* colors */
+  --red: #ea5047;
+  --blue: #27354a;
+  --gray: #d3d3d3;
+  --white: #fff;
+  --yellow: #fafad2;
+  --active: #ebce9a;
+
+  /* border-radius */
+  --outer-radius: 1rem;
+  --inner-radius: calc(var(--outer-radius) / 2);
+
+  /* font-weight */
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* font-size */
+  --base: 1rem;
+  --sm: 1.15rem;
+  --md: 1.25rem;
+  --lg: 1.75rem;
+  --xl: 2rem;
+
+  /* spacing */
+
+  --global-padding: clamp(var(--spacing-16), -16.9122rem + 76.4253vw, var(--spacing-32));
+
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-12: 0.75rem;
+  --spacing-16: 1rem;
+  --spacing-20: 1.25rem;
+  --spacing-24: 1.5rem;
+  --spacing-28: 1.75rem;
+  --spacing-32: 2rem;
+  --spacing-36: 2.25rem;
+  --spacing-40: 2.5rem;
+  --spacing-44: 2.75rem;
+  --spacing-48: 3rem;
+  --spacing-52: 3.25rem;
+  --spacing-56: 3.5rem;
+  --spacing-60: 3.75rem;
+  --spacing-64: 4rem;
+  --spacing-68: 4.25rem;
+  --spacing-72: 4.5rem;
+  --spacing-76: 4.75rem;
+  --spacing-80: 5rem;
+  --spacing-84: 5.25rem;
+  --spacing-88: 5.5rem;
+  --spacing-92: 5.75rem;
+  --spacing-96: 6rem;
+  --spacing-100: 6.25rem;
+  --spacing-104: 6.5rem;
+  --spacing-108: 6.75rem;
+  --spacing-112: 7rem;
+  --spacing-116: 7.25rem;
+  --spacing-120: 7.5rem;
+  --spacing-124: 7.75rem;
+  --spacing-128: 8rem;
+  --spacing-132: 8.25rem;
+  --spacing-136: 8.5rem;
+  --spacing-140: 8.75rem;
+  --spacing-144: 9rem;
+  --spacing-148: 9.25rem;
+  --spacing-152: 9.5rem;
+  --spacing-156: 9.75rem;
+  --spacing-160: 10rem;
+  --spacing-164: 10.25rem;
+  --spacing-168: 10.5rem;
+  --spacing-172: 10.75rem;
+  --spacing-176: 11rem;
+  --spacing-180: 11.25rem;
+  --spacing-184: 11.5rem;
+  --spacing-188: 11.75rem;
+  --spacing-192: 12rem;
+  --spacing-196: 12.25rem;
+  --spacing-200: 12.5rem;
+}
+
+/* A more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  /* Resets default margins and paddings */
+  margin: 0;
+  padding: 0;
+  /* Remove built-in form typography styles */
+  font: inherit;
+}
+
+html {
+  /* Sets default line-height */
+  line-height: 1.5;
+}
+
+body {
+  /* Sets min-height on the body for mobile devices */
+  min-height: 100svh;
+
+  /* Fallback for desktop */
+  min-height: 100vh;
+
+  /* Make footer stick to bottom */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+/* Makes images responsive */
+img,
+picture,
+video,
+canvas,
+svg {
+  width: 100%;
+  display: block;
+}
+/* Balances headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+/* Removes default button styling and adds a pointer cursor */
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+/* Removes default list styling */
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: var(--base);
+  color: var(--blue);
+}
+
+main {
+  margin-block: var(--spacing-8);
+
+  padding-inline: var(--global-padding);
+
+  @media (width > 1024px) {
+    padding-inline: var(--spacing-120);
+  }
+}
+
+h1 {
+  background-color: var(--red);
+  padding-inline: var(--global-padding);
+  text-align: center;
+  font-size: var(--xl);
+  padding-block: var(--spacing-16);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+  letter-spacing: 2px;
+
+  @media (width > 768px) {
+    text-align: left;
+  }
+}
+
+nav ul {
+  padding-block: var(--spacing-8);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  background-color: var(--blue);
+  color: var(--white);
+  padding-inline: var(--global-padding);
+
+  @media (width > 768px) {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    gap: var(--spacing-20);
+    font-size: var(--md);
+  }
+
+  :not(:last-child) {
+    ::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: var(--gray);
+      margin-inline: auto;
+    }
+
+    @media (width > 768px) {
+      ::after {
+        display: none;
+      }
+    }
+  }
+  .active-link {
+    font-size: var(--md);
+    color: var(--active);
+
+    @media (width > 768px) {
+      font-size: calc(var(--md) + var(--spacing-4));
+    }
+  }
+}
+footer {
+  background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-block: var(--spacing-16);
+  margin-top: var(--spacing-16);
+}

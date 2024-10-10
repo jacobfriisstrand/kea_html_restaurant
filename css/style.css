@@ -1,0 +1,248 @@
+@import "globals.css";
+
+/* HOMEPAGE */
+article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.homepage-section {
+  @media (width > 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-32);
+  }
+
+  @media (width > 1024px) {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.homepage-text {
+  grid-row: 1;
+
+  @media (width > 768px) {
+    font-size: var(--md);
+  }
+}
+
+img {
+  border-radius: var(--outer-radius);
+
+  @media (width > 768px) {
+    grid-column: 2;
+  }
+}
+
+p {
+  grid-row: 1;
+}
+
+.usp-list {
+  display: grid;
+  margin-block: var(--spacing-16);
+  gap: var(--spacing-4);
+  color: var(--red);
+  font-weight: var(--fw-bold);
+  margin-left: var(--spacing-12);
+
+  @media (width > 768px) {
+    font-size: var(--md);
+  }
+}
+
+.homepage-quote {
+  background-color: var(--gray);
+  padding: var(--spacing-12);
+  margin-top: auto;
+
+  p {
+    max-width: initial;
+  }
+
+  & > p:nth-child(2) {
+    padding-left: var(--spacing-32);
+  }
+
+  em {
+    font-style: italic;
+  }
+}
+
+/* MENU */
+
+.food-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-16);
+
+  @media (width > 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.food-item {
+  display: grid;
+  gap: var(--spacing-16);
+  background-color: var(--yellow);
+  padding: var(--spacing-20);
+  border-radius: var(--outer-radius);
+
+  img {
+    order: -1;
+    border-radius: var(--inner-radius);
+  }
+
+  h2 {
+    font-weight: var(--fw-bold);
+    font-size: var(--md);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+
+    @media (width > 768px) {
+      grid-row: 1;
+      font-size: var(--sm);
+    }
+  }
+
+  @media (width > 786px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (width > 1024px) {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .food-item-price {
+    background-color: var(--red);
+    width: fit-content;
+    padding: var(--spacing-4) var(--spacing-12);
+    border-radius: var(--inner-radius);
+    color: var(--white);
+    border: var(--spacing-4) solid var(--blue);
+    font-weight: var(--fw-bold);
+
+    @media (width > 768px) {
+      font-size: var(--md);
+    }
+  }
+}
+
+/* CONTACT */
+
+.contact-main {
+  display: grid;
+  gap: var(--spacing-16);
+
+  @media (width > 1024px) {
+    grid-template-rows: min-content;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-section {
+  @media (width > 1024px) {
+    display: contents;
+  }
+
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-16);
+
+  .contact-section-img-wrapper {
+    padding: var(--spacing-8);
+    border: 1px solid var(--blue);
+    border-radius: var(--inner-radius);
+
+    @media (width > 1024px) {
+      grid-column: 2;
+      grid-row: span 2;
+      height: fit-content;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+
+    @media (width > 1024px) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  p a {
+    font-weight: var(--fw-bold);
+  }
+
+  img {
+    border-radius: 0;
+    object-fit: cover;
+
+    @media (width > 786px) {
+      aspect-ratio: 16 / 6;
+    }
+
+    @media (width > 1024px) {
+      aspect-ratio: 4 / 3;
+    }
+  }
+}
+
+fieldset {
+  display: grid;
+  gap: var(--spacing-12);
+  border-radius: var(--outer-radius);
+  padding: var(--spacing-12);
+
+  legend {
+    padding-inline: var(--spacing-4);
+  }
+
+  div {
+    display: grid;
+    gap: var(--spacing-4);
+  }
+
+  label {
+    font-size: var(--sm);
+  }
+
+  input,
+  textarea {
+    padding-block: var(--spacing-4);
+    border-radius: calc(var(--inner-radius) / 2);
+    border: 1px solid var(--blue);
+    padding-inline: var(--spacing-8);
+  }
+
+  input[type="number"] {
+    width: 6ch;
+    text-align: right;
+  }
+
+  input[type="datetime-local"] {
+    width: fit-content;
+  }
+
+  button {
+    background-color: var(--gray);
+    padding: var(--spacing-4);
+    width: fit-content;
+    padding: var(--spacing-8) var(--spacing-12);
+    margin-left: var(--spacing-20);
+    border-radius: var(--inner-radius);
+    border: 2px solid var(--blue);
+
+    @media (width > 768px) {
+      font-size: var(--md);
+    }
+  }
+}
